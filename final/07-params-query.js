@@ -17,9 +17,9 @@ app.get('/api/products/:productID', (req, res) => {
   // console.log(req)
   // console.log(req.params)
   const { productID } = req.params
-
+  //:productid in the route represents a route parameter or params
   const singleProduct = products.find(
-    (product) => product.id === Number(productID)
+    (product) => product.id === Number(productID) //number is used here because req.params always returns a string
   )
   if (!singleProduct) {
     return res.status(404).send('Product Does Not Exist')

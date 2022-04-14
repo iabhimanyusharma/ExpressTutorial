@@ -9,8 +9,9 @@ app.use(express.static('./public'))
 // app.get('/', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, './navbar-app/index.html'))
 //   adding to static assets
-//   SSR
+//   SSR (server side rendering)
 // })
+// since index.html can also be used as a static file, we can put it in public folder and access it from there
 
 app.all('*', (req, res) => {
   res.status(404).send('resource not found')
